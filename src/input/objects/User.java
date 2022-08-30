@@ -2,6 +2,8 @@ package input.objects;
 
 import java.util.Scanner;
 
+import input.Player;
+
 public class User implements Player {
     
     Scanner scan;

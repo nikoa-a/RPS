@@ -2,8 +2,9 @@ package game;
 
 public abstract class Game {
 
-    int player1Points;
-    int player2Points;
+    protected int player1Points;
+    protected int player2Points;
+    protected Options options;
 
     public Game() {
         player1Points = 0;

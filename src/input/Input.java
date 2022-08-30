@@ -1,7 +1,5 @@
 package input;
 
-import input.objects.Player;
-
 public abstract class Input {
 
     protected Player player1;

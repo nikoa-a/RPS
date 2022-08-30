@@ -1,6 +1,5 @@
-import game.Game;
-import game.RPS;
-
+import game.*;
+import game.implementation.RPSSLGame;
 import input.Input;
 import input.implementation.*;
 
@@ -8,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         Input input = new AutoInput();   
-        Game game = new RPS();
+        Game game = new RPSSLGame();
 
         while (game.running()) {
             String player1 = input.player1Input();

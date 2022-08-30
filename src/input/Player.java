@@ -1,4 +1,4 @@
-package input.objects;
+package input;
 
 public interface Player {
     
