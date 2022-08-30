@@ -1,3 +1,4 @@
+import game.Game;
 import game.RPS;
 
 import input.Input;
@@ -7,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Input input = new AutoInput();   
-        RPS game = new RPS();
+        Game game = new RPS();
 
         while (game.running()) {
             String player1 = input.player1Input();
