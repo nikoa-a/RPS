@@ -18,5 +18,11 @@ public class RPS implements Options {
     public int getNumberOfOptions() {
         return 3;
     }
+
+    public String[] validOptions() {
+        return new String[] {
+            "kivi", "paperi", "sakset"
+        };
+    }
     
 }

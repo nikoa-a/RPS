@@ -2,22 +2,23 @@ package input.objects;
 
 import java.util.Random;
 
+import game.Options;
 import input.Player;
 
 public class CPU implements Player {
 
-    Random rand;
+    private Random rand;
+    private Options options;
 
-    public CPU() {
+    public CPU(Options options) {
         rand = new Random();
+        this.options = options;
     }
 
     public String option() {
-        String[] options = new String[] {
-            "kivi", "paperi", "sakset", "spock", "lisko"
-        };
-        int index = rand.nextInt(5);
-        return options[index];
+        int index = rand.nextInt(options.getNumberOfOptions());
+        String[] validOptions = options.validOptions();
+        return validOptions[index];
     }
     
 }

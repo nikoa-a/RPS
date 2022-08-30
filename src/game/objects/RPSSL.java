@@ -23,4 +23,10 @@ public class RPSSL implements Options {
         return 5;
     }
 
+    public String[] validOptions() {
+        return new String[] {
+            "kivi", "paperi", "sakset", "spock", "lisko"
+        };
+    }
+
 }

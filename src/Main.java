@@ -1,13 +1,17 @@
+import java.util.Scanner;
+
 import game.*;
-import game.implementation.RPSSLGame;
+import game.implementation.*;
 import input.Input;
 import input.implementation.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Input input = new AutoInput();   
-        Game game = new RPSSLGame();
+        Scanner scan = new Scanner(System.in);
+  
+        Game game = selectGame(scan);
+        Input input = selectPlayers(scan, game);
 
         while (game.running()) {
             String player1 = input.player1Input();
@@ -15,10 +19,45 @@ public class Main {
 
             System.out.println(player1);
             System.out.println(player2);
-
-            
+         
             game.play(player1, player2);
             game.score();
+        }
+    }
+
+    
+    private static Game selectGame(Scanner scan) {
+        while (true) {
+            System.out.println("Valitse pelimuoto:");
+            System.out.println("1=RPS");
+            System.out.println("2=RPSSL");
+            try {
+                int mode = Integer.parseInt(scan.nextLine());
+                if (mode == 1) {
+                    return new RPSGame();
+                } else if (mode == 2) {
+                    return new RPSSLGame();
+                }
+            } catch (Exception e) {}
+        }
+    }
+
+    private static Input selectPlayers(Scanner scan, Game game) {
+        while (true) {
+            System.out.println("Valitse pelaajat:");
+            System.out.println("1=CPU vs CPU");
+            System.out.println("2=Pelaaja vs CPU");
+            System.out.println("3=Pelaaja vs Pelaaja");
+            try {
+                int mode = Integer.parseInt(scan.nextLine());
+                if (mode == 1) {
+                    return new AutoInput(game.getValidOptions());
+                } else if (mode == 2) {
+                    return new VersusBotInput(game.getValidOptions(), scan);
+                } else if (mode == 3) {
+                    return new VersusPlayerInput(game.getValidOptions(), scan);
+                } 
+            } catch (Exception e) {}
         }
     }
 

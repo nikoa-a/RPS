@@ -1,13 +1,14 @@
 package input.implementation;
 
+import game.Options;
 import input.Input;
 import input.objects.CPU;
 
 public class AutoInput extends Input {
 
-    public AutoInput() {
-        player1 = new CPU();
-        player2 = new CPU();
+    public AutoInput(Options options) {
+        player1 = new CPU(options);
+        player2 = new CPU(options);
     }
 
 }

@@ -43,4 +43,8 @@ public abstract class Game {
         return diff;
     }
 
+	public Options getValidOptions() {
+        return options;
+    }
+
 }
