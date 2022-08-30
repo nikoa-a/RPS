@@ -32,4 +32,15 @@ public abstract class Game {
         return false;
     }
 
+    protected int result(String player1, String player2) {
+        int player1Int = options.optionNumber(player1);
+        int player2Int = options.optionNumber(player2);
+        
+        int diff = player1Int - player2Int;
+        if (diff < 0) {
+            diff += options.getNumberOfOptions();
+        }
+        return diff;
+    }
+
 }

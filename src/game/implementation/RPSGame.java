@@ -19,16 +19,5 @@ public class RPSGame extends Game {
                 break;
         }
     }
-
-    private int result(String player1, String player2) {
-        int player1Int = options.optionNumber(player1);
-        int player2Int = options.optionNumber(player2);
-        
-        int diff = player1Int - player2Int;
-        if (diff < 0) {
-            diff += 3;
-        }
-        return diff;
-    }
     
 }

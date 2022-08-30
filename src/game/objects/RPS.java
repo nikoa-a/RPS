@@ -14,5 +14,9 @@ public class RPS implements Options {
         }
         return 0;
     }
+
+    public int getNumberOfOptions() {
+        return 3;
+    }
     
 }

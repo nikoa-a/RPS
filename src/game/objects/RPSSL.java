@@ -19,4 +19,8 @@ public class RPSSL implements Options {
         return 0;
     }
 
+    public int getNumberOfOptions() {
+        return 5;
+    }
+
 }
